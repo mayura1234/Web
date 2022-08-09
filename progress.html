@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 180px;
+            height: 20px;
+            padding: 6px 8px;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+        progress{
+            margin-top: 60px;
+            margin-left: 50px;
+        }
+        label{
+            color: maroon;
+        }
+    </style>
+    <script>
+        function loader(){
+            var prog=document.getElementById("mayura");
+            let nve=0;
+            var c=document.getElementsByName("stud");
+            for(i=0;i<c.length;i++)
+                if(c[i].validity.valid)
+                   nve++;
+            prog.value=nve*20;
+        }
+    </script>
+</head>
+<body><h2 style="color: Blue;">progress</h2> 
+    <form>
+    <label for="name">Enter name : </label>
+    <input type="text" required id="name" name="stud" onchange="loader();">
+    <br>
+    <label for="date">Date : </label>
+    <input type="date" required id="dte" name="stud" onchange="loader();">
+    <br>
+    <label for="email">Email :</label>
+    <input type="email" required id="mail" name="stud" onchange="loader();"><br>
+    <label for="number"> Contact :</label>
+    <input type="number" required pattern="[0-9]{10}" id="text4" name="stud" onchange="loader();"><br>
+    <label for="city">City : </label>
+    <input type="text" required name="stud" id="city" onchange="loader();">
+    </form>
+    <progress value="0" max="100" id="mayura"></progress>
+</body>
+</html>
