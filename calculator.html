@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        input[type=text]{
+            background-color: yellow;
+            border: 2px solid green;
+            border-radius: 4px;
+        }
+        label{
+            display: block;
+            margin: 15px;
+        }
+        h2{
+            text-transform: uppercase;
+        }
+        body{
+            margin-left: 400px;
+            margin-top: 200px;
+        }
+        input[type=button]{
+            margin-left: 10px;
+        }
+
+    </style>
+    <script>
+        function ADD(){
+            document.getElementById("res").value= parseInt(document.getElementById("fn").value) + parseInt(document.getElementById("sn").value);
+        }
+        function SUB(){
+            document.getElementById("res").value= parseInt(document.getElementById("fn").value) - parseInt(document.getElementById("sn").value);
+        }
+        function MUL(){
+            document.getElementById("res").value= parseInt(document.getElementById("fn").value) * parseInt(document.getElementById("sn").value);
+        }
+        function DIV(){
+            
+            document.getElementById("res").value= parseInt(document.getElementById("fn").value) / parseInt(document.getElementById("sn").value);
+        }
+    </script>
+</head>
+<body>
+    <form>
+    <h2>Simple Calculator</h2>
+    <label for="first">First Number : <input type="text" id="fn" name="first" value="" required></label>
+    <label for="Second">Second Number : <input type="text" id="sn" name="Second" value="" required></label>
+    <label for="Result">Result <input type="text" disabled id="res" name="Result" required></label>
+    <input type="button" value="ADD" id="add" onclick="ADD();">
+    <input type="button" value="SUB" id="sub" onclick="SUB();">
+    <input type="button" value="MUL" id="mul" onclick="MUL();">
+    <input type="button" value="DIV" id="div" onclick="DIV();">
+    <input type="reset" value="RESET">
+</form>
+</body>
+</html>
