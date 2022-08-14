@@ -23,6 +23,15 @@
             else
             alert("valid");
         }
+        function seme(){
+            var d=document.getElementById("semi").value;
+            if(d.match(/[1-4]/)===null)
+            {
+                alert("IN-Valid semester");
+            }
+            else
+            alert("Valid semester");
+        }
      </script>
   </head>
   <body>
@@ -31,13 +40,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
  <div class="container">
-    <form action="">
+    <form >
         <div class="row">
             <div class="col-12 col-md-3">
-                <label for="usn" class="form-label">USN:<input class="form-control" type="text" id="usn"></label>
+                <label for="usnn" class="form-label">USN:<input class="form-control" name="usnn" type="text" id="usn"></label>
             <button type="button" class="btn btn-success butn btn-md" onclick="validates();">Validate</button>
             </div>
         </div>
+    </br> 
+        <div class="row">
+        <div class="col-12 col-md-3">
+            <label for="sem" class="form-label">SEMISTER: <input class="form-control" name="sem" type="text" id="semi"></label>
+        <button type="button" class="btn btn-danger butn btn-md" onclick="seme();">Check</button>
+        </div>
+    </div>
     </form>
  </div>    
 </body>
