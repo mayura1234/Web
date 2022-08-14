@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAX</title>
+    <style>
+     input[type=checkbox]{ 
+         display: block; 
+        /* margin-left: 30px; */
+      }  
+    /* input[type=text]{ */
+        /* margin-left: 30px; */
+    /* } */
+    label{
+        margin-left: 30px;
+    } 
+    .container{
+        padding-left: 30px;
+    }
+        body{
+            background: linear-gradient(270deg, rgb(15, 144, 153) 0%, rgb(143, 23, 23) 0%, rgb(212, 20, 212) 100%); 
+        }
+</style>
+<script>
+    a=o=b=0;
+    var total=0;
+    function add(){
+        if(document.getElementById("apple").checked)
+            a=parseInt(document.getElementById("appleqty").value * document.getElementById("apple").value);
+        else
+        a=0;
+        if(document.getElementById("orange").checked)
+          o=parseInt(document.getElementById("orangeqty").value * document.getElementById("orange").value);
+        else
+        o=0;
+        if(document.getElementById("banana").checked)
+          o=parseInt(document.getElementById("bananaqty").value * document.getElementById("banana").value);
+        else
+        o=0;
+    total=a+o+b;
+    document.getElementById("res").innerHTML="<h4>Total is: $"+(total/100)+"</h4>";
+            alert("your total cost is $"+(total+(total*5)/100)/100) +"\n(5% tax included)";
+            return false;
+    }
+
+</script>
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+     <div class="col-md-4">
+        <h2>Available Fruits :</h2>
+     </div>
+     <div class="row">
+        <div class="col-2 col-md-2">
+            <h4>Items</h4>
+    </div>
+    <div class="col-1 col-md-1">
+        <h4>Qty</h4>
+    </div>
+</div>
+<div class="row"></div>
+    <div class="col-2  col-md-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="59" id="apple" name="afruit" >
+          <label class="form-check-label disp" for="afruit">
+            Apple (59cents) 
+          </label>
+        </div>
+    </div>
+    <div class="col-1 col-md-1">
+            <input type="text" class="form-control disp" name="qty1" id="appleqty" placeholder="0" >
+    </div>
+</div>
+<div class="row">
+    <div class="col-2 col-md-2">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="49" id="orange" name="afruit">
+            <label class="form-check-label" for="afruit">
+            Orange (49cents)
+            </label>
+        </div>
+    </div>
+    <div class="col-1 col-md-1">
+        <input type="text" class="form-control disp" name="qty2" id="orangeqty" placeholder="0">
+    </div>
+</div>
+<div class="row">
+    <div class="col-2  col-md-">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="39" id="banana" name="afruit">
+            <label class="form-check-label" for="afruit">
+              Banana (39cents)
+            </label>
+          </div>
+    </div>
+    <div class="col-1 col-md-1">
+        <input type="text" class="form-control disp" name="qty3" id="bananaqty" placeholder="0">
+    </div> 
+</div>
+<div name="result" id="res" class="col-2 md-2">
+    <h4>$0</h4>
+</div>
+<div class="col-2 col-md-2">
+    <button type="submit" class="btn btn-primary" value="Submit" onclick="add();">Submit</button>
+</div>
+</div>
+</body>
+</html>

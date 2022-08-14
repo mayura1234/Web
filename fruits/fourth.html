@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Tax</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        body{
+             background: linear-gradient(90deg,rgb(63,255,255)0%,rgb(24,58,235)0%,rgb(83,49,21)100%); 
+            /* background: linear-gradient(270deg, rgb(65, 255, 255) 0%, rgb(244, 67, 129) 0%, rgb(131, 223, 253) 100%);  */
+        }
+    </style>
+    <script>
+        var tot=0;
+        function ADD(fruit)
+        {
+            if(fruit.checked)
+            tot+=parseInt(fruit.value);
+            else
+            tot-=parseInt(fruit.value);
+            document.getElementById("res").innerHTML="<b>Total : </b>"+"<b>$</b>"+tot;
+        }
+    </script>
+
+  </head>
+  <body>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <div class="container">
+        <div class="col-5 col-md-4">
+            <h2>Available Fruits :</h2>
+    </div>
+    <div class="row">
+        <div class="col-2 col-md-2">
+            <h4>Item</h4>
+        </div>
+    </div>
+    <div class="row">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="59" id="apple" name="afruit" onclick="ADD(this);" >
+        <label class="form-check-label disp" for="afruit">
+          Apple (59cents) 
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="49" id="orange" name="afruit" onclick="ADD(this);" >
+        <label class="form-check-label disp" for="afruit">
+          Orange (49cents) 
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="39" id="banana" name="afruit" onclick="ADD(this);" >
+        <label class="form-check-label disp" for="afruit">
+          Banana (39cents) 
+        </label>
+      </div>
+      <div name="result" id="res" class="col-2 md-2">
+        <h4>$0</h4>
+    </div>
+</div>
+  </body>
+</html>
