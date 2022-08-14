@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script>
+        function vow(){
+        var m=document.getElementById("srch").value;
+        var loc=m.indexOf(m.match(/[aeiouAEIOU]/))+1;
+        alert(loc);
+         document.getElementById("x").innerHTML="<p>Location of first vowel is: "+loc+"</p>";
+        }
+    </script>
+  </head>
+  <body>
+      
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <div class="container">
+        <h4 style="padding-left: 200px;"> Vowels</h4>
+        <form>
+       <div class="row">
+        <div class="col-12 col-md-3">
+        <!-- <form action="vow();"> -->
+        <label for="txtbx1" class="form-label">Enter the String :<input type="text" class="form-control" id="srch" name="txtbx1"></label>
+        <input type="button" value="Search" id="buut" class="btn btn-success btn-sm"onclick="vow();">
+    </div>
+</div>
+</form>
+    <div id="x"></div>
+</div>
+</body>
+</html>
