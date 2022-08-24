@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limit</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(function (){
+            var ml=$("textarea").attr('maxlength');
+            $("span").text(ml);
+            $("textarea").keyup(function (){
+                var len= $(this).attr('maxlength');
+                var nc=$(this).val().length;
+                $("#rc").text(ml-nc);
+            });
+            $("[type=checkbox]").click(function (){
+            if($(this).is(':checked'))
+            {
+             $("[type=button]").removeAttr('disabled');
+            }
+            else
+            {
+                $("[type=button]").attr('disabled','disabled');
+            }
+            
+            })
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <input type="checkbox" name="" id="">I Agree for terms and conditions
+        <input type="button" value="Submit" disabled> 
+        <h4>Maximum limit <span>20</span> charecters</h4>
+        <textarea name="ta1" id="txt1" cols="30" rows="10" maxlength="20"></textarea>
+        <p>Remaining <span id="rc">20</span> charecters.</p>
+        
+    </form>
+</body>
+</html>
